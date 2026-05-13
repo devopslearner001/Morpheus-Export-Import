@@ -1,0 +1,14 @@
+resource "instance-type-layout" "e57439e0-f8f5-4849-a2e6-317249e58430" {
+  code = "e57439e0-f8f5-4849-a2e6-317249e58430"
+  name = "ASG CentOS 9"
+  uuid = "2630eb34-37ad-4be6-9642-58c4303ccb2b"
+  actions = [ { code = "generic-add-node" } ]
+  hasAutoScale = true
+  instanceType = { code = "asg.CentOS9" }
+  instanceVersion = "9"
+  labels = [ "migrate" ]
+  memoryRequirement = 0
+  provisionType = { code = "vmware" }
+  supportsConvertToManaged = true
+  workloads = [ { code = "57f7bd42-1580-4572-b892-8c18898969ca" } ]
+}
