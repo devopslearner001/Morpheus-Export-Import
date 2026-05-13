@@ -1,0 +1,12 @@
+resource "instance-type" "ap.CentOS" {
+  code = "ap.CentOS"
+  name = "ap_CentOS"
+  uuid = "3e3ccc0e-c831-4a90-8222-d7c6ea1d1474"
+  category = "os"
+  deploymentService = "defaultDeployService"
+  environmentPrefix = "AP_CENTOS"
+  hasAutoScale = true
+  hasDeployment = true
+  hasSettings = true
+  labels = [ "migrate" ]
+}
