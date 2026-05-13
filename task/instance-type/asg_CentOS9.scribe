@@ -9,5 +9,4 @@ resource "instance-type" "asg.CentOS9" {
   hasDeployment = true
   hasSettings = true
   labels = [ "migrate" ]
-  layouts = [ { code = "e57439e0-f8f5-4849-a2e6-317249e58430" } ]
 }
