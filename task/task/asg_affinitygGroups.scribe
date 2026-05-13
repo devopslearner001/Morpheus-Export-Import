@@ -8,12 +8,12 @@ resource "task" "asg.affinitygGroups" {
   lastUpdated = "2026-05-13T11:23:36.000Z"
   options = [
     {
-      optionType = { code = "winrm.powershellVersion" }
-      value = "5.0"
-    },
-    {
       content = { uuid = "7ae1c984-68cd-48ce-88ba-c40c2c3c368a" }
       optionType = { code = "script" }
+    },
+    {
+      optionType = { code = "winrm.powershellVersion" }
+      value = "5.0"
     }
   ]
   resultType = "json"
