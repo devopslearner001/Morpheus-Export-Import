@@ -1,0 +1,20 @@
+resource "task" "affinity.groups" {
+  code = "affinity.groups"
+  name = "List affinity Group From Cluster"
+  uuid = "70cacd89-5066-4dba-88ef-9bcb3ae28ada"
+  dateCreated = "2026-04-02T08:23:43.000Z"
+  executeTarget = "local"
+  labels = [ "asingh(don't delete)" ]
+  lastUpdated = "2026-05-13T11:39:52.000Z"
+  options = [
+    {
+      content = { uuid = "4f936f9e-3a74-4035-bf50-cfbd9fb2cb4b" }
+      optionType = { code = "script" }
+    },
+    {
+      optionType = { code = "winrm.powershellVersion" }
+      value = "5.0"
+    }
+  ]
+  taskType = { code = "winrmTask" }
+}
