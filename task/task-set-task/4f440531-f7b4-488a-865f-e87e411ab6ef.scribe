@@ -1,0 +1,5 @@
+resource "task-set-task" "4f440531-f7b4-488a-865f-e87e411ab6ef" {
+  uuid = "4f440531-f7b4-488a-865f-e87e411ab6ef"
+  task = { name = "Reacharge Pricing" }
+  taskPhase = "configure"
+}
