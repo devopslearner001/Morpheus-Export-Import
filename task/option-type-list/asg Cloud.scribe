@@ -1,0 +1,20 @@
+resource "option-type-list" "asg Cloud" {
+  name = "asg Cloud"
+  uuid = "88e26834-0e71-41af-a179-c3cb3c780b88"
+  apiType = "clouds"
+  labels = [ "migrate" ]
+  realTime = true
+  requestScript = <<EOFSCRIBE
+if (input.asgGroups) {
+  results.siteId = input.asgGroups
+}
+EOFSCRIBE
+  translationScript = <<EOFSCRIBE
+if (input.asgGroups) {
+  for(var x=0;x < data.length; x++) {
+   results.push({name:data[x].name, value:data[x].id});
+  }
+}
+EOFSCRIBE
+  type = "api"
+}

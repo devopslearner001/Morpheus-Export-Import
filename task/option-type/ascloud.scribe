@@ -1,0 +1,12 @@
+resource "option-type" "ascloud" {
+  code = "ascloud"
+  name = "asg Clouds"
+  uuid = "0d78d1f8-03e8-4dad-9eff-84b05d9b6e55"
+  fieldContext = "config.customOptions"
+  fieldLabel = "as cloud"
+  fieldName = "ascloud"
+  labels = [ "migrate" ]
+  optionList = { name = "asg Cloud" }
+  optionSource = "list"
+  type = "select"
+}
