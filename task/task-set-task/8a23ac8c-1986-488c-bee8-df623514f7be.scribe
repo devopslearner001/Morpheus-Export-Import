@@ -1,0 +1,4 @@
+resource "task-set-task" "8a23ac8c-1986-488c-bee8-df623514f7be" {
+  uuid = "8a23ac8c-1986-488c-bee8-df623514f7be"
+  task = { name = "Connectivity Test" }
+}
