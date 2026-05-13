@@ -8,12 +8,12 @@ resource "task" "affinity.groups" {
   lastUpdated = "2026-05-13T11:39:52.000Z"
   options = [
     {
-      optionType = { code = "winrm.powershellVersion" }
-      value = "5.0"
-    },
-    {
       content = { uuid = "4f936f9e-3a74-4035-bf50-cfbd9fb2cb4b" }
       optionType = { code = "script" }
+    },
+    {
+      optionType = { code = "winrm.powershellVersion" }
+      value = "5.0"
     }
   ]
   taskType = { code = "winrmTask" }
