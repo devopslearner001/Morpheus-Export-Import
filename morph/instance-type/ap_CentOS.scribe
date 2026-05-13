@@ -9,4 +9,5 @@ resource "instance-type" "ap.CentOS" {
   hasDeployment = true
   hasSettings = true
   labels = [ "migrate" ]
+  layouts = [ { code = "488e6802-9160-4321-9140-b6ba3cbc288a" } ]
 }
