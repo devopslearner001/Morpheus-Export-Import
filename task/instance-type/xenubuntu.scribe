@@ -9,4 +9,5 @@ resource "instance-type" "xenubuntu" {
   hasDeployment = true
   hasSettings = true
   labels = [ "migrate" ]
+  layouts = [ { code = "afd799b9-c884-445d-b95d-dba0bd2101bb" } ]
 }
