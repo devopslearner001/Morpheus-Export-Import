@@ -1,0 +1,17 @@
+resource "container-type" "57f7bd42-1580-4572-b892-8c18898969ca" {
+  code = "57f7bd42-1580-4572-b892-8c18898969ca"
+  name = "AT CentsOS 9"
+  uuid = "0acde56b-91c3-4c0e-bfd0-58b77210144e"
+  actions = [ { code = "generic-remove-node" } ]
+  containerVersion = "9"
+  entryPoint = ""
+  labels = [ "migrate" ]
+  logTypeCode = "vm"
+  provisionType = { code = "vmware" }
+  repositoryImage = ""
+  serverType = "vm"
+  shortName = "atCentOS"
+  showServerLogs = true
+  statTypeCode = "vm"
+  virtualImage = { code = "vmware.vsphere.image.morpheus.centos.9-stream.20250218" }
+}
