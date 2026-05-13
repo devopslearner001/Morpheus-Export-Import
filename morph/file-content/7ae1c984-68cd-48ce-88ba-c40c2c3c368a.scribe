@@ -1,0 +1,36 @@
+resource "file-content" "7ae1c984-68cd-48ce-88ba-c40c2c3c368a" {
+  uuid = "7ae1c984-68cd-48ce-88ba-c40c2c3c368a"
+  content = <<EOFSCRIBE
+# Morpheus-injected variables
+$vmName      = "as-morph-vm-224"
+$vcenter     = "vcenter01.prod.dc2.den.morpheusdata.com"  # remove /sdk
+$user        = "asingh2@ad.morpheusdata.com"
+$pass        = "Morphe#0121"
+$clusterName = "Demo"
+$groupName   = "asg-morph-hostGroup"
+
+Write-Host "Test task: Adding VM '$vmName' to DRS VM Group '$groupName'..."
+
+# Ignore SSL certificate issues
+Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Scope User -Confirm:$false
+
+# Connect to vCenter
+$secPass = ConvertTo-SecureString $pass -AsPlainText -Force
+$cred    = New-Object System.Management.Automation.PSCredential ($user, $secPass)
+Connect-VIServer -Server $vcenter -Credential $cred -Force | Out-Null
+
+# Get the VM
+$vm = Get-VM -Name $vmName
+
+# Add VM to the DRS VM Group directly by name
+Write-Host "Adding VM '$vmName' to existing VM Group '$groupName'..."
+Add-VMToDrsVMGroup -Cluster $clusterName -VM $vm -Name $groupName
+
+Write-Host "SUCCESS: VM '$vmName' added to DRS VM Group '$groupName'"
+
+# Disconnect
+Disconnect-VIServer -Confirm:$false | Out-Null
+EOFSCRIBE
+  dateCreated = "2026-04-02T06:59:13.000Z"
+  lastUpdated = "2026-04-02T08:18:56.000Z"
+}

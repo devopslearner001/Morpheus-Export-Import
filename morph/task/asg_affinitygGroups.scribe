@@ -1,0 +1,21 @@
+resource "task" "asg.affinitygGroups" {
+  code = "asg.affinitygGroups"
+  name = "Affinity_Groups"
+  uuid = "701a9a2b-df09-49a7-9355-44c33347f47b"
+  dateCreated = "2026-04-02T06:59:13.000Z"
+  executeTarget = "local"
+  labels = [ "migrate" ]
+  lastUpdated = "2026-05-13T11:23:36.000Z"
+  options = [
+    {
+      optionType = { code = "winrm.powershellVersion" }
+      value = "5.0"
+    },
+    {
+      content = { uuid = "7ae1c984-68cd-48ce-88ba-c40c2c3c368a" }
+      optionType = { code = "script" }
+    }
+  ]
+  resultType = "json"
+  taskType = { code = "winrmTask" }
+}
