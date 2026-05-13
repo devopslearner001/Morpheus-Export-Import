@@ -1,0 +1,5 @@
+resource "task-set-task" "acab3f83-f7bf-44bb-a0cb-62ee4cd521e4" {
+  uuid = "acab3f83-f7bf-44bb-a0cb-62ee4cd521e4"
+  task = { code = "affinitytask.asg" }
+  taskPhase = "provision"
+}

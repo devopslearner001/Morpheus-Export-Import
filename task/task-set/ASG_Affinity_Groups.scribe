@@ -1,0 +1,8 @@
+resource "task-set" "ASG_Affinity_Groups" {
+  name = "ASG_Affinity_Groups"
+  uuid = "e73609a5-f059-4a9f-8aca-fb1b4dd552a8"
+  dateCreated = "2026-04-02T06:59:39.000Z"
+  labels = [ "migrate" ]
+  lastUpdated = "2026-05-13T11:23:59.000Z"
+  taskSetTasks = [ { uuid = "acab3f83-f7bf-44bb-a0cb-62ee4cd521e4" } ]
+}

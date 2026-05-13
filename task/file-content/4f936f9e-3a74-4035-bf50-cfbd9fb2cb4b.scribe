@@ -1,0 +1,19 @@
+resource "file-content" "4f936f9e-3a74-4035-bf50-cfbd9fb2cb4b" {
+  uuid = "4f936f9e-3a74-4035-bf50-cfbd9fb2cb4b"
+  content = <<EOFSCRIBE
+$vcenter="vcenter01.prod.dc2.den.morpheusdata.com"
+$user="asingh2@ad.morpheusdata.com"
+$pass="Morphe#0121"
+$clusterName="Demo"
+
+Connect-VIServer -Server $vcenter -Credential (New-Object PSCredential $user,(ConvertTo-SecureString $pass -AsPlainText -Force)) -Force | Out-Null
+$cluster = Get-Cluster $clusterName
+if ($cluster) {
+    $cluster.ExtensionData.ConfigurationEx.Group | Where-Object { $_ -is [VMware.Vim.ClusterVmGroup] -or $_ -is [VMware.Vim.ClusterHostGroup] } | ForEach-Object { Write-Host $_.Name }
+    $cluster.ExtensionData.ConfigurationEx.Rule | ForEach-Object { Write-Host $_.Name }
+}
+Disconnect-VIServer -Confirm:$false | Out-Null
+EOFSCRIBE
+  dateCreated = "2026-04-02T08:23:43.000Z"
+  lastUpdated = "2026-04-02T08:54:04.000Z"
+}
