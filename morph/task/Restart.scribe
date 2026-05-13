@@ -1,0 +1,11 @@
+resource "task" "Restart" {
+  code = "Restart"
+  name = "AT-Restart"
+  uuid = "5280c460-251a-419c-94f3-f2d9c10ab3cd"
+  dateCreated = "2024-10-10T17:49:47.000Z"
+  executeTarget = "resource"
+  labels = [ "migrate" ]
+  lastUpdated = "2026-05-13T10:35:16.000Z"
+  retryable = true
+  taskType = { code = "restartTask" }
+}
